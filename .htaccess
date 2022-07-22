@@ -1,8 +1,6 @@
-DirectoryIndex index.php
-RewriteEngine On
+RewriteEngine on
 
-RewriteCond %{SCRIPT_FILENAME} !-d
-RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteRule ^ index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule !^(public/|index\.php) [NC,F]
+RewriteRule ^(.+)$ index.php
